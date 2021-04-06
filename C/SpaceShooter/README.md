@@ -4,7 +4,7 @@
 This is a simple game made in approximetly in 2 hours in plain' C, with [SDL2](https://www.libsdl.org/).
 This was my first try making anything "big" in C without classes or std libraries, and i think it shows.
 
-![SpaceShooterImage](/screenshot.png)
+![Picture](screenshot.png)
 
 # Compiling
 ## Window:
@@ -20,3 +20,6 @@ Compile by typing "make" in the projects root directory, and the compiled game w
 
 # Design
 The "engine" is SDL2 wrapper located in game/engine, the wrapper is desgined to be similar in style to [Raylib](https://www.raylib.com/).
+
+All the game related source files are in game/source, entry point is in game/main.c which calls the update functions in game/game.c which calls
+update/draw functions in entities/*.c.
