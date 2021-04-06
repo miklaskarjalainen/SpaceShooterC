@@ -1,6 +1,6 @@
 # <p align=center> MiniProjects
 
-This is a collection of small projects which doesn't deserve its own repository, everything here is under the [MIT](./LICENCE) licence (expect the libraries used which are under their own licences).
+This is a collection of small projects which doesn't deserve its own repository, everything here is under the [MIT](./LICENSE) licence (expect the libraries used which are under their own licences).
 
 ## Projects
 
