@@ -4,7 +4,7 @@
 This is a simple game made in approximetly in 2 hours in plain' C, with [SDL2](https://www.libsdl.org/).
 This was my first try making anything "big" in C without classes or std libraries, and i think it shows.
 
-![SpaceShooterImage](/screenshot.png)
+![picture](screenshot.png "")
 
 # Compiling
 ## Window:
