@@ -118,6 +118,6 @@ void UpdateEnemy(Enemy* e) {
 }
 
 void DrawEnemy(Enemy* e) {
-	DrawTexture(en_texture, e->position);;
+	DrawTextureFrame(en_texture, e->position, (SDL_Rect) { 0, 0, 32, 32 });
 }
 

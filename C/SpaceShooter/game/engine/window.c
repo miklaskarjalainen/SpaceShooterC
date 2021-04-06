@@ -7,6 +7,13 @@ SDL_Window* window = NULL;
 bool close_window = false;
 
 void CreateWindow(const char* title, int width, int height, SDL_WindowFlags flags) {
+
+	// SWTICH //
+	#ifdef __SWITCH__
+		romfsInit();
+    		chdir("romfs:/");
+	#endif
+
 	// Init SDL //
 	GIF_ASSERT(!SDL_Init(SDL_INIT_EVERYTHING),  SDL_GetError());
 	GIF_ASSERT( IMG_Init(IMG_INIT_PNG),			SDL_GetError());
@@ -16,7 +23,7 @@ void CreateWindow(const char* title, int width, int height, SDL_WindowFlags flag
 	GIF_ASSERT(window, "Failed To Create a SDL Window");
 	
 	// Renderer //
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_TARGETTEXTURE);
 	GIF_ASSERT(renderer, "Failed To Create a SDL Renderer");
 
 	KeyboardStates = SDL_GetKeyboardState(NULL);
@@ -44,9 +51,11 @@ void DoEvents() {
 	}
 }
 
+extern void CalcFrameTimes(); // in fps_calc.c
 void RenderScreen() {
 	SDL_RenderPresent(renderer);
-	SDL_Delay(16); // Stay at 60fps
+	CalcFrameTimes();
+	//SDL_Delay(16); // Stay at 60fps
 }
 
 void ClearScreen(SDL_Color color) {

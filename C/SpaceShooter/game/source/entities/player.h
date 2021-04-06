@@ -2,7 +2,7 @@
 #include "../../engine/engine.h"
 
 typedef struct Player{
-	Vec2i position;
+	Vec2f position;
 	SDL_Texture* texture;
 	bool isDead;
 	int score;

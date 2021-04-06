@@ -1,9 +1,11 @@
 #include "game.h"
 
+#define KEY_RESTART (IsControllerKeyDown(SDL_CONTROLLER_BUTTON_START) ||IsKeyDown(SDL_SCANCODE_RETURN))
+
 // Game Files //
-#include "entitys/player.h"
-#include "entitys/enemy.h"
-#include "entitys/bullet.h"
+#include "entities/player.h"
+#include "entities/enemy.h"
+#include "entities/bullet.h"
 
 extern Player player;
 
@@ -22,7 +24,7 @@ void UpdateGame() {
 	}
 	else
 	{
-		if (IsKeyDown(SDL_SCANCODE_RETURN))
+		if (KEY_RESTART)
 		{
 			InitGame();
 		}

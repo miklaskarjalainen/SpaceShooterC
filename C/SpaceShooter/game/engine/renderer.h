@@ -37,6 +37,8 @@ void DrawTexture(SDL_Texture* texture, Vec2i position);
 void DrawTextureEx(SDL_Texture* texture, Vec2i position, bool vflip, bool hflip);
 void DrawTexturePro(SDL_Texture* texture, SDL_Rect src, SDL_Rect dst, double Angle, SDL_Point center, bool vflip, bool hflip);
 
+void DrawTextureFrame(SDL_Texture* texture, Vec2i pos, SDL_Rect frame);
+
 // Utils //
 
 void SetRenderColor(SDL_Color color);

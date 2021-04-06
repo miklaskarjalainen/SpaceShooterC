@@ -1,7 +1,6 @@
 #pragma once
 #include "base.h"
 
-
 void CreateWindow(const char* title, int width, int height, SDL_WindowFlags flags);
 void DestroyWindow();
 

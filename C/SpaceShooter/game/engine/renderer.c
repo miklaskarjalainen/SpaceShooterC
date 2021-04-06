@@ -80,6 +80,13 @@ void DrawTexturePro(SDL_Texture* texture, SDL_Rect src, SDL_Rect dst, double Ang
     SDL_RenderCopyEx(renderer, texture, &src, &dst, 0.0f, &center, flip);
 }
 
+void DrawTextureFrame(SDL_Texture* texture, Vec2i pos, SDL_Rect src) {
+    SDL_Rect dst = src;
+    dst.x = pos.x;
+    dst.y = pos.y;
+
+    SDL_RenderCopy(renderer, texture, &src, &dst);
+}
 
 // Utils //
 

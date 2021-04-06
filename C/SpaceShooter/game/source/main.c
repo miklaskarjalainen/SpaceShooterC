@@ -1,15 +1,17 @@
-#include "engine/engine.h"
-#include "source/game.h"
+#include "../engine/engine.h"
+#include "game.h"
 
-extern SDL_Renderer* renderer;
-extern SDL_Window* window;
 
+extern SDL_Renderer* renderer;extern SDL_Window* window;
+
+#undef main
 int main(int argc, char** args)
 {
 	CreateWindow("The awesome game made in c with in 2 hours", 1280, 720, SDL_WINDOW_SHOWN);
 	SetRenderScale((Vec2f) {2.0f, 2.0f});
 
 	InitGame();
+	InitController();
 
 	while (!ShouldWindowClose())
 	{
@@ -40,9 +42,11 @@ int main(int argc, char** args)
 		DrawGame();
 
 		RenderScreen();
+		SDL_Delay(16);
 	}
 
 	CleanUpGame();
+	CloseController();
 
 	DestroyWindow();
 	return 0;
